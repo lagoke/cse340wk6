@@ -1,0 +1,119 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%# messages() %>
+
+    <%- messages() %>
+
+
+
+    <% if (errors) { %>
+      <ul class="notice">
+     <% errors.array().forEach(error => { %>
+       <li><%= error.msg %></li>
+    <%  }) %>
+     </ul>
+    <% } %>
+
+    <div class="limiter">
+      <div class="container-login100">
+        <div class="wrap-login100">
+          <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="/account/register" method="post">
+            <span class="login100-form-title">
+              Register
+            </span>
+  
+            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter first name">
+              <input class="input100" type="text" name="account_firstname" placeholder="First Name" id="accountFirstname" required value="<%= locals.account_firstname %>">
+              <span class="focus-input100"></span>
+            </div>
+  
+
+            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter last name" required value="<%= locals.account_lastname %>">
+              <input class="input100" type="text" name="account_lastname" placeholder="Last Name">
+              <span class="focus-input100"></span>
+            </div>
+
+
+            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter last name">
+              <input class="input100" type="text" name="account_email" placeholder="Email address" required value="<%= locals.account_email %>">
+              <span class="focus-input100"></span>
+            </div>
+  
+
+
+            <div class="wrap-input100 validate-input" data-validate = "Please enter password">
+              <input class="input100" type="password" name="account_password" placeholder="Password" id="pword" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+              <span class="focus-input100"></span>  
+            </div>
+            <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span> 
+            <span id="pswdBtn">Show Password</span>
+
+  
+     <br />
+  
+            <div class="container-login100-form-btn">
+              <button class="login100-form-btn" type="submit"> 
+               Register
+              </button>
+
+<!--
+              <input class="input100" type="submit"  value="Register">  -->
+
+            </div>
+            <br />
+  <!--
+            <div class="flex-col-c p-t-170 p-b-40">
+              <span class="txt1 p-b-9">
+                Don’t have an account?
+              </span>
+  
+              <a href="#" class="txt3">
+                Sign up now
+              </a>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+    
+
+<script>
+
+const pswdBtn = document.querySelector("#pswdBtn");
+pswdBtn.addEventListener("click", function() {
+  const pswdInput = document.getElementById("pword");
+  const type = pswdInput.getAttribute("type");
+  if (type == "password") {
+    pswdInput.setAttribute("type", "text");
+    pswdBtn.innerHTML = "Hide Password";
+  } else {
+    pswdInput.setAttribute("type", "password");
+    pswdBtn.innerHTML = "Show Password";
+  }
+});
+
+
+</script>
+
+
+    
+  <!--===============================================================================================-->
+    <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="/vendor/animsition/js/animsition.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="/vendor/bootstrap/js/popper.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="/vendor/select2/select2.min.js"></script>
+  <!--===============================================================================================-->
+    <script src="/vendor/daterangepicker/moment.min.js"></script>
+    <script src="/vendor/daterangepicker/daterangepicker.js"></script>
+  <!--===============================================================================================-->
+    <script src="/vendor/countdowntime/countdowntime.js"></script>
+  <!--===============================================================================================-->
+    <script src="/js/main.js"></script>

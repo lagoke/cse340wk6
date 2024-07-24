@@ -1,0 +1,58 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%- messages() %>
+
+    <%# grid %>
+
+    <br />
+
+    <div>
+    <a href ="/inv/newclassification"> Add New Classification </a> 
+</div>
+<br />  
+<div>
+
+    <a href ="/inv/newinventory"> Add New Inventory </a>
+
+    </div>
+
+
+    <div>
+      <a href ="/account/updateAccount">   Update account information </a> 
+  </div>
+  <br />  
+
+  
+
+
+
+
+
+    <h2>Manage Inventory</h2>
+
+
+<p> Select a classification from the list to see the items belonging to the classification.</p>
+
+<!--       Select tag for classification list here          -->
+
+<%- classificationSelect %>
+
+
+<table id="inventoryDisplay"></table>
+
+
+<noscript>JavaScript must be enabled to use this page.</noscript>
+
+
+
+
+
+
+<script src="../../js/inventory.js"></script>
+
+
+    <br />   <br />  <br />

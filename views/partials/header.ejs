@@ -1,0 +1,28 @@
+  <header>
+    <div class="header-container">
+        <h1>CSE Motors</h1>
+
+
+
+        <%  
+        
+        checkLogin = (req, res, next) => {
+        
+        if (res.locals.loggedin) { %>
+ <p> Welcome  <%   %> </p>   <a title="log out" href="/account/logout">Logout/a>
+          <% } else { %>
+            <a title="Click to log in" href="/account/login">My Account</a>
+            <%   } 
+            
+          }
+            %>
+
+
+       
+    </div>
+
+
+
+
+
+</header>

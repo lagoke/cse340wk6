@@ -1,0 +1,64 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%# messages() %>
+
+    <%- messages() %>
+
+
+
+    <% if (errors) { %>
+      <ul class="notice">
+     <% errors.array().forEach(error => { %>
+       <li><%= error.msg %></li>
+    <%  }) %>
+     </ul>
+    <% } %>
+
+    <div class="limiter">
+      <div class="container-login100">
+        <div class="wrap-login100">
+          <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="/inv/add-classification" method="post">
+            <span class="login100-form-title">
+              New Classification
+            </span>
+  
+            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the classfication name">
+              <input class="input100" type="text" name="classification_name" placeholder="Classification Name" required>
+              <span class="focus-input100"></span>
+            </div>
+            <span>the new classification name cannot contain a space or special character of any kind</span> 
+  
+            
+  
+     <br />
+  
+            <div class="container-login100-form-btn">
+              <button class="login100-form-btn" type="submit"> 
+               Submit New Classification
+              </button>
+
+<!--
+              <input class="input100" type="submit"  value="Register">  -->
+
+            </div>
+            <br />
+  <!--
+            <div class="flex-col-c p-t-170 p-b-40">
+              <span class="txt1 p-b-9">
+                Don’t have an account?
+              </span>
+  
+              <a href="#" class="txt3">
+                Sign up now
+              </a>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+    
+

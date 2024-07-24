@@ -1,0 +1,129 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%# messages() %>
+
+    <%- messages() %>
+
+
+
+    <% if (errors) { %>
+      <ul class="notice">
+     <% errors.array().forEach(error => { %>
+       <li><%= error.msg %></li>
+    <%  }) %>
+     </ul>
+    <% } %>
+
+    <div class="limiter">
+      <div class="container-login100">
+        <div class="wrap-login100">
+          <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="/inv/add-inventory" method="post">
+            <span class="login100-form-title">
+              New Inventory
+            </span>
+  
+            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the Inventory make">
+              <input class="input100" type="text" name="inv_make" placeholder="Inventory make" required value="<%= locals.inv_make %>">
+              <span class="focus-input100"></span>
+            </div>
+           <!-- <span>the new classification name cannot contain a space or special character of any kind</span> -->
+  
+            
+
+           <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the Inventory model">
+            <input class="input100" type="text" name="inv_model" placeholder="Inventory model" required  value="<%= locals.inv_model %>"> 
+            <span class="focus-input100"></span>
+          </div>
+
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the Inventory year">
+            <input class="input100" type="text" name="inv_year" placeholder="Inventory year" required  value="<%= locals.inv_year %>">
+            <span class="focus-input100"></span>
+          </div>
+
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the Inventory description">
+           
+           <textarea class="input100" name="inv_description"  required   value="<%= locals.inv_description %>">   Inventory description</textarea>
+            <span class="focus-input100"></span>
+          </div>
+
+
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the path of the Inventory full image">
+            <input class="input100" type="text" name="inv_image" placeholder="Inventory full image path" required   value="<%= locals.inv_image %>"> 
+            <span class="focus-input100"></span>
+          </div>
+
+
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the path of the Inventory thumbnail image">
+            <input class="input100" type="text" name="inv_thumbnail" placeholder="Inventory thumbnail image path" required value="<%= locals.inv_thumbnail %>">
+            <span class="focus-input100"></span>
+          </div>
+
+
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the Inventory price">
+            <input class="input100" type="number" name="inv_price" placeholder="Inventory price" required  value="<%= locals.inv_price %>">
+            <span class="focus-input100"></span>
+          </div>
+
+  
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the Inventory miles">
+            <input class="input100" type="number" name="inv_miles" placeholder="Inventory miles" required  value="<%= locals.inv_miles %>">
+            <span class="focus-input100"></span>
+          </div>
+
+
+
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter the Inventory color">
+            <input class="input100" type="text" name="inv_color" placeholder="Inventory color" required  value="<%= locals.inv_color %>">
+            <span class="focus-input100"></span>
+          </div>
+
+
+        
+
+
+          <div class="wrap-input100 validate-input m-b-16" data-validate="Please select inventory classification">
+            <%- select_classification %>
+            <span class="focus-input100"></span>
+          </div>
+
+
+
+     <br />
+  
+            <div class="container-login100-form-btn">
+              <button class="login100-form-btn" type="submit"> 
+               Submit New Inventory
+              </button>
+
+<!--
+              <input class="input100" type="submit"  value="Register">  -->
+
+            </div>
+            <br />
+  <!--
+            <div class="flex-col-c p-t-170 p-b-40">
+              <span class="txt1 p-b-9">
+                Don’t have an account?
+              </span>
+  
+              <a href="#" class="txt3">
+                Sign up now
+              </a>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+    
+
